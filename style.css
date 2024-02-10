@@ -77,8 +77,9 @@ button {
 }
 
 .hearts {
-    width: clamp(100px, 10vw, 2000px);
-    height: clamp(100px, 10vw, 2000px);
+    position: relative;
+    width: clamp(100px, 20vw, 2000px);
+    height: clamp(100px, 20vw, 2000px);
     display: flex;
     justify-content: center;
     align-items: center;
