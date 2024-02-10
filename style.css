@@ -2,6 +2,7 @@
     transition: all 0.3s ease;
 }
 
+/* Background gradient, font color */
 body {
     background-color:hsla(305,100%,78%,0.96);
 
@@ -19,9 +20,18 @@ body {
     color: white;
 }
 
-#input-row {
+/* Align everything in the center */
+#content {
     display: flex;
+    justify-content: center;
     align-items: center;
+    flex-direction: column;
+    height: 100vh;
+}
+
+h1 {
+    text-align: center;
+    font-size: clamp(24px, 6vw, 200px);
 }
 
 input::placeholder {
@@ -61,26 +71,18 @@ button {
     color: white;
 }
 
-h1 {
-    text-align: center;
-    font-size: clamp(24px, 6vw, 200px);
-}
-
-#content {
+#input-row {
     display: flex;
-    justify-content: center; /* Horizontally center the div */
-    align-items: center; /* Vertically center the div */
-    flex-direction: column;
-    height: 100vh;
-}
-
-.heartModel {
-    width: 1000px;
+    align-items: center;
 }
 
 .hearts {
+    width: clamp(100px, 10vw, 2000px);
+    height: clamp(100px, 10vw, 2000px);
     display: flex;
     justify-content: center;
+    align-items: center;
+    margin: 0 10px;
 }
 
 #go-button {
