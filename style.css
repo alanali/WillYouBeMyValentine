@@ -1,0 +1,97 @@
+* {
+    transition: all 0.3s ease;
+}
+
+body {
+    background-color:hsla(305,100%,78%,0.96);
+
+    background-image:
+        radial-gradient(at 11% 11%, hsla(348,100%,83%,0.92) 0px, transparent 50%),
+        radial-gradient(at 62% 13%, hsla(281,74%,75%,0.64) 0px, transparent 50%),
+        radial-gradient(at 54% 85%, hsla(319,100%,75%,0.73) 0px, transparent 50%),
+        radial-gradient(at 87% 46%, hsla(291,100%,85%,0.79) 0px, transparent 50%),
+        radial-gradient(at 91% 92%, hsla(304,78%,88%,0.95) 0px, transparent 50%),
+        radial-gradient(at 15% 82%, hsla(285,87%,79%,0.82) 0px, transparent 50%),
+        radial-gradient(at 34% 62%, hsla(280,0%,100%,0.95) 0px, transparent 50%);
+
+    background-size: cover;
+    background-repeat: no-repeat;
+    color: white;
+}
+
+#input-row {
+    display: flex;
+    align-items: center;
+}
+
+input::placeholder {
+    text-align: center;
+    color: white;
+}
+
+#valentineForm {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+form {
+    /* background: green; */
+    display: inline-block;
+}
+ 
+input {
+    border: none;
+    background: transparent;
+    border-bottom: 1px solid #fff;
+    outline: none;
+    margin: 0 5vw;
+    text-align: center;
+    caret-color: white;
+    color: white;
+}
+
+textarea:focus, input:focus{
+    outline: none;
+}
+
+button {
+    background: transparent;
+    border: 0;
+    color: white;
+}
+
+h1 {
+    text-align: center;
+    font-size: clamp(24px, 6vw, 200px);
+}
+
+#content {
+    display: flex;
+    justify-content: center; /* Horizontally center the div */
+    align-items: center; /* Vertically center the div */
+    flex-direction: column;
+    height: 100vh;
+}
+
+.hearts {
+    display: flex;
+    justify-content: center;
+}
+
+#go-button {
+    margin-top: 2vw;
+}
+
+#signature {
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* Horizontally center the div */
+    align-items: center;
+    color: rgba(255, 255, 255, 0.75);
+    margin-bottom: 1vw;
+}
+
+#signature p {
+    margin: 0;
+}
