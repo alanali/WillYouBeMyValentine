@@ -74,6 +74,10 @@ h1 {
     height: 100vh;
 }
 
+.heartModel {
+    width: 1000px;
+}
+
 .hearts {
     display: flex;
     justify-content: center;
