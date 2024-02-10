@@ -6,6 +6,40 @@ body.transition {
     transition: background-color 1.5s;
 }
 
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+@font-face {
+    font-family: 'Rafaella';
+    src: url('fonts/Rafaella.ttf') format('truetype');
+    /* Additional font properties (e.g., font-weight, font-style) can be specified here */
+}
+
+@font-face {
+    font-family: 'Rafaella Bold';
+    src: url('fonts/Rafaella\ Bold.ttf') format('truetype');
+    font-weight: bold;
+}
+
+@font-face {
+    font-family: 'Rafaella Bold Shade';
+    src: url('fonts/Rafaella\ Bold\ Shade.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'Rafaella Shade';
+    src: url('fonts/Rafaella\ Shade.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'Rafaella Shade Solo';
+    src: url('fonts/Rafaella\ Shade\ Solo.ttf') format('truetype');
+}
+
+
 /* Background gradient, font color */
 body {
     /* background-color:hsla(305,100%,78%,0.96); */
@@ -23,7 +57,21 @@ body {
     background-size: cover;
     background-repeat: no-repeat;
     color: white;
+
+    font-family: 'Rafaella Shade', sans-serif;
+    font-style: normal;
 }
+
+/* TODO: Remove */
+/* .line {
+    position: fixed;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    height: 100vh;
+    width: 2px;
+    background-color: black;
+} */
 
 /* Align everything in the center */
 #content {
@@ -31,12 +79,13 @@ body {
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    height: 100vh;
+    min-height: 100vh;
 }
 
 h1 {
     text-align: center;
-    font-size: clamp(24px, 6vw, 200px);
+    font-size: clamp(32px, 6vw, 200px);
+    line-height: 105%;
 }
 
 input::placeholder {
@@ -58,7 +107,7 @@ form {
 input {
     border: none;
     background: transparent;
-    border-bottom: 1px solid #fff;
+    border-bottom: 1px solid white;
     outline: none;
     margin: 0 5vw;
     text-align: center;
@@ -66,7 +115,7 @@ input {
     color: white;
 }
 
-textarea:focus, input:focus{
+textarea:focus, input:focus {
     outline: none;
 }
 
@@ -87,34 +136,42 @@ button {
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    margin: 0 clamp(15px, 4vw, 2000px);
+    text-align: center;
+    margin: 0 clamp(10px, 4vw, 400px);
+
+    /* border: 1px solid black; */
 }
 
 model-viewer {
-    width: clamp(100px, 25vw, 2000px);
-    height: clamp(100px, 25vw, 2000px);
+    width: clamp(150px, 24vw, 400px);
+    height: clamp(150px, 24vw, 400px);
 }
 
 input[type="text"] {
     position: absolute;
-    top: 50%;
-    left: 30%;
-    transform: translate(-50%, -50%);
-    font-size: clamp(10px, 3vw, 150px);
     width: 80%;
+    font-size: clamp(10px, 2vw, 150px);
+
+    /* border: 1px solid black; */
 }
 
 #go-button {
     margin-top: 5vw;
+    font-size: clamp(10px, 3vw, 130px);
 }
 
 #signature {
+    position: fixed;
+    bottom: clamp(5px, 1vw, 20px);
+    left: 50%;
+    transform: translateX(-50%);
     display: flex;
     flex-direction: column;
-    justify-content: center; /* Horizontally center the div */
+    justify-content: center;
     align-items: center;
     color: rgba(255, 255, 255, 0.75);
-    margin-bottom: 1vw;
+    line-height: 110%;
+    font-size: clamp(14px, 1vw, 28px);
 }
 
 #signature p {
