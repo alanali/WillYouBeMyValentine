@@ -59,7 +59,6 @@ body {
     color: white;
 
     font-family: 'Rafaella Shade', sans-serif;
-    font-style: normal;
 }
 
 /* TODO: Remove */
@@ -91,6 +90,7 @@ h1 {
 input::placeholder {
     text-align: center;
     color: white;
+    font-family: 'Rafaella', sans-serif;
 }
 
 #valentineForm {
@@ -123,6 +123,7 @@ button {
     background: transparent;
     border: 0;
     color: white;
+    font-family: 'Rafaella Shade', sans-serif;
 }
 
 #input-row {
@@ -172,6 +173,7 @@ input[type="text"] {
     color: rgba(255, 255, 255, 0.75);
     line-height: 110%;
     font-size: clamp(14px, 1vw, 28px);
+    font-family: 'Rafaella', sans-serif;
 }
 
 #signature p {
