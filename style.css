@@ -2,9 +2,14 @@
     transition: all 0.3s ease;
 }
 
+body.transition {
+    transition: background-color 1.5s;
+}
+
 /* Background gradient, font color */
 body {
-    background-color:hsla(305,100%,78%,0.96);
+    /* background-color:hsla(305,100%,78%,0.96); */
+    background-color: white;
 
     background-image:
         radial-gradient(at 11% 11%, hsla(348,100%,83%,0.92) 0px, transparent 50%),
