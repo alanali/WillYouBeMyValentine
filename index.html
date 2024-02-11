@@ -15,8 +15,7 @@
     <!-- TODO: REMOVE -->
     <!-- <div class="line"></div> -->
     <div id="content">
-        <h1>Will you be my valentine?</h1><br>
-
+        <h1>Will you be</h1><h1>my valentine?</h1><br><br>
         <form id="valentineForm" novalidate>
             <div id="input-row">
                 <div class="hearts">
@@ -27,10 +26,10 @@
                         poster="public/heart_poster.png" 
                         shadow-intensity="0" 
                         shadow-softness="0" 
-                        auto-rotate rotation-per-second="200%" 
+                        auto-rotate rotation-per-second="300%" 
                         environment-image="public/clouds.hdr">
                     </model-viewer>
-                    <input type="text" id="yourName" placeholder="Your Name" required>
+                    <input type="text" id="yourName" placeholder="Your Name" required autocomplete="off">
                 </div>
                 <div class="hearts">
                     <model-viewer 
@@ -40,14 +39,13 @@
                         poster="public/heart_poster.png" 
                         shadow-intensity="0" 
                         shadow-softness="0" 
-                        auto-rotate rotation-per-second="200%" 
+                        auto-rotate rotation-per-second="300%" 
                         environment-image="public/clouds.hdr">
                     </model-viewer>
-                    <input type="text" id="valentineName" placeholder="Your Valentine" required>
+                    <input type="text" id="valentineName" placeholder="Your Valentine" required autocomplete="off">
                 </div>
-                <br>
-            </div>
-            <button type="submit" id="go-button" >Go</button>
+            </div><br><br>
+            <button class="go-button" data-type="emoji" role="button">Go</button>
         </form>
     </div>
     <div id="signature">
