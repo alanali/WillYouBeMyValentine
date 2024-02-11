@@ -48,7 +48,7 @@ function createParticle(x, y, type) {
 
     switch (type) {
         case 'emoji':
-        particle.innerHTML = ['❤️','🩷','🧡','🩵','💜','❤️‍🔥💖💝💞💕💗💓','💖','💝','💞','💕','💗','💓'][Math.floor(Math.random() * 7)];
+        particle.innerHTML = ['❤️','🩷','🧡','🩵','💜','❤️‍🔥','💖','💝','💞','💕','💗','💓'][Math.floor(Math.random() * 7)];
         particle.style.fontSize = `${Math.random() * 24 + 10}px`;
         width = height = 'auto';
         break;
@@ -75,8 +75,4 @@ animation.onfinish = removeParticle;
   
 function removeParticle(e) {
     e.srcElement.effect.target.remove();
-}
-
-if (document.body.animate) {
-    document.querySelectorAll('button').forEach(button => button.addEventListener('click', pop));
 }
