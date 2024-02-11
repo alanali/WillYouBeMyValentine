@@ -18,10 +18,13 @@ document.addEventListener('DOMContentLoaded', function() {
             document.body.style.backgroundColor = 'hsla(305,100%,78%,0.96)';
         }
     });
+    document.querySelectorAll('.go-button').forEach(button => {
+        button.addEventListener('click', pop);
+    });
 });
 
 function pop(e) {
-    let amount = 30;
+    let amount = 20;
     if (e.clientX === 0 && e.clientY === 0) {
       const bbox = e.target.getBoundingClientRect();
       const x = bbox.left + bbox.width / 2;
@@ -32,9 +35,9 @@ function pop(e) {
     } else {
       for (let i = 0; i < amount; i++) {
         createParticle(e.clientX, e.clientY + window.scrollY, e.target.dataset.type);
-      }
+        }
     }
-  }
+}
   
 function createParticle(x, y, type) {
     const particle = document.createElement('particle');
@@ -48,7 +51,7 @@ function createParticle(x, y, type) {
 
     switch (type) {
         case 'emoji':
-        particle.innerHTML = ['❤️','🩷','🧡','🩵','💜','❤️‍🔥','💖','💝','💞','💕','💗','💓'][Math.floor(Math.random() * 7)];
+        particle.innerHTML = ['❤️','🩷','🧡','🩵','💜','❤️‍🔥','💖','💝','💞','💕','💗','💓','💘'][Math.floor(Math.random() * 13)];
         particle.style.fontSize = `${Math.random() * 24 + 10}px`;
         width = height = 'auto';
         break;
@@ -66,7 +69,7 @@ function createParticle(x, y, type) {
         opacity: 0
         }
     ], {
-        duration: Math.random() * 1000 + 5000,
+        duration: Math.random() * 1000 + 4000,
         easing: 'cubic-bezier(0, .9, .57, 1)',
         delay: delay
     });
