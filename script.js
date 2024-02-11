@@ -1,10 +1,10 @@
 document.addEventListener('DOMContentLoaded', function() {
     const vform = document.getElementById('valentineForm');
-
+    document.querySelectorAll('.go-button').forEach(button => {
+        button.addEventListener('click', pop);
+    });
     vform.addEventListener('submit', function(event) {
-        const yourName = document.getElementById('yourName');
-        const valentineName = document.getElementById('valentineName');
-        if (!yourName.value || !valentineName.value) {
+        if (!validForm()) {
             document.body.classList.add('transition');
             document.body.style.backgroundColor = 'red';
             setTimeout(function() {
@@ -15,31 +15,39 @@ document.addEventListener('DOMContentLoaded', function() {
             }, 1000);
             event.preventDefault();
         } else {
+            const url = `https://alanali.github.io/WillYouBeMyValentine/${yourName}/${valentineName}`;
+            window.history.pushState({}, '', url);
             document.body.style.backgroundColor = 'hsla(305,100%,78%,0.96)';
         }
     });
-    document.querySelectorAll('.go-button').forEach(button => {
-        button.addEventListener('click', pop);
-    });
 });
 
+function validForm() {
+    const yourName = document.getElementById('yourName');
+    const valentineName = document.getElementById('valentineName');
+    return yourName.value.trim() !== '' && valentineName.value.trim() !== '';
+}
+
 function pop(e) {
+    if (!validForm()) {
+        return;
+    }
     let amount = 20;
     if (e.clientX === 0 && e.clientY === 0) {
       const bbox = e.target.getBoundingClientRect();
       const x = bbox.left + bbox.width / 2;
       const y = bbox.top + bbox.height / 2;
       for (let i = 0; i < 30; i++) {
-        createParticle(x, y, e.target.dataset.type);
+        createParticle(x, y);
       }
     } else {
       for (let i = 0; i < amount; i++) {
-        createParticle(e.clientX, e.clientY + window.scrollY, e.target.dataset.type);
+        createParticle(e.clientX, e.clientY + window.scrollY);
         }
     }
 }
   
-function createParticle(x, y, type) {
+function createParticle(x, y) {
     const particle = document.createElement('particle');
     document.body.appendChild(particle);
     let width = Math.floor(Math.random() * 30 + 8);
@@ -49,13 +57,9 @@ function createParticle(x, y, type) {
     let rotation = Math.random() * 520;
     let delay = Math.random() * 200;
 
-    switch (type) {
-        case 'emoji':
-        particle.innerHTML = ['❤️','🩷','🧡','🩵','💜','❤️‍🔥','💖','💝','💞','💕','💗','💓','💘'][Math.floor(Math.random() * 13)];
-        particle.style.fontSize = `${Math.random() * 24 + 10}px`;
-        width = height = 'auto';
-        break;
-    }
+    particle.innerHTML = ['❤️','🩷','🧡','🩵','💜','❤️‍🔥','💖','💝','💞','💕','💗','💓','💘'][Math.floor(Math.random() * 13)];
+    particle.style.fontSize = `${Math.random() * 24 + 10}px`;
+    width = height = 'auto';
 
     particle.style.width = `${width}px`;
     particle.style.height = `${height}px`;

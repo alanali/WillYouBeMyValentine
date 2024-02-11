@@ -15,7 +15,6 @@ html, body {
 @font-face {
     font-family: 'Rafaella';
     src: url('fonts/Rafaella.ttf') format('truetype');
-    /* Additional font properties (e.g., font-weight, font-style) can be specified here */
 }
 
 @font-face {
@@ -85,7 +84,7 @@ body {
 
 h1 {
     text-align: center;
-    font-size: clamp(48px, 7vw, 200px);
+    font-size: clamp(48px, 8vw, 150px);
     line-height: 105%;
     margin: 0px;
     padding: 0px;
@@ -155,7 +154,7 @@ input[type="text"] {
 }
 
 .go-button {
-    background-color: #bde3ffc5;
+    background-color: #acc8f3c5;
     border-radius: 100px;
     box-shadow: rgba(224, 240, 255, 0.2) 0 -25px 18px -14px inset,
         rgba(224, 240, 255, .15) 0 1px 2px,
@@ -174,7 +173,7 @@ input[type="text"] {
     border: 0;
     font-size: clamp(24px, 2vw, 36px);
     touch-action: manipulation;
-    font-family: 'Rafaella', sans-serif;
+    font-family: 'Rafaella Bold', sans-serif;
   }
   
 .go-button:hover {
