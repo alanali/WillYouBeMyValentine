@@ -58,19 +58,31 @@ function updatePage(name, val) {
     
     document.querySelectorAll('.hearts').forEach(container => {
         container.addEventListener('click', function() {
-            alert('Model viewer clicked!');
+            const heartId = container.id;
+            if (heartId === 'heart1') {
+                yes();
+            } else {
+                no();
+            }
         });
         const modelViewer = container.querySelector('model-viewer');
         container.addEventListener('mouseenter', function() {
             container.classList.add('hover-effect');
-            modelViewer.setAttribute('rotation-per-second', '500%');
+            modelViewer.setAttribute('rotation-per-second', '700%');
         });
         container.addEventListener('mouseleave', function() {
             container.classList.remove('hover-effect');
             modelViewer.setAttribute('rotation-per-second', '300%');
         });
     });
+}
 
+function yes() {
+    alert('They said yes!');
+}
+
+function no() {
+    alert('They said no :(');
 }
 
 function validForm() {
