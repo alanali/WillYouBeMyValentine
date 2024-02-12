@@ -24,6 +24,7 @@ document.addEventListener('DOMContentLoaded', function() {
         } else {
             const yourName = document.getElementById('yourName').value;
             const valentineName = document.getElementById('valentineName').value;
+            navigator.clipboard.writeText(`https://alanali.github.io/WillYouBeMyValentine/?name=${yourName}&valentine=${valentineName}`)
             updatePage(yourName, valentineName);
         }
     });
@@ -31,8 +32,8 @@ document.addEventListener('DOMContentLoaded', function() {
 
 function updatePage(name, val) {
     document.body.style.backgroundColor = 'hsla(305,100%,78%,0.96)';
-    const url = `https://alanali.github.io/WillYouBeMyValentine/?name=${name}&valentine=${val}`;
-    window.history.pushState({}, '', url);
+    // const url = `https://alanali.github.io/WillYouBeMyValentine/?name=${name}&valentine=${val}`;
+    // window.history.pushState({}, '', url);
     document.getElementById('title').textContent = `${val}, will you be ${name}'s valentine?`;
     // Remove elements
     const inputElements = document.querySelectorAll('.hearts input');
@@ -41,10 +42,14 @@ function updatePage(name, val) {
     });
     const button = document.querySelector('.go-button');
     button.parentNode.removeChild(button);
-
+    // Add options and copied
     document.querySelectorAll('.options-container').forEach(container => {
         container.style.display = 'flex';
     });
+    document.getElementById("copied").style.opacity = "1";
+    setTimeout(function() {
+        document.getElementById("copied").style.opacity = "0";
+    }, 2000);
 
     document.querySelectorAll('.hearts').forEach(container => {
         container.addEventListener('click', function() {
