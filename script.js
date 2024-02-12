@@ -1,9 +1,17 @@
 document.addEventListener('DOMContentLoaded', function() {
+    const urlParams = new URLSearchParams(window.location.search);
+    
+    if (urlParams.has('name') && urlParams.has('valentine')) {
+        const yourName = urlParams.get('name');
+        const valentineName = urlParams.get('valentine');
+        
+    }
     const vform = document.getElementById('valentineForm');
     document.querySelectorAll('.go-button').forEach(button => {
         button.addEventListener('click', pop);
     });
     vform.addEventListener('submit', function(event) {
+        event.preventDefault();
         if (!validForm()) {
             document.body.classList.add('transition');
             document.body.style.backgroundColor = 'red';
@@ -13,11 +21,12 @@ document.addEventListener('DOMContentLoaded', function() {
                     document.body.classList.remove('transition');
                 }, 1000);
             }, 1000);
-            event.preventDefault();
         } else {
-            const url = `https://alanali.github.io/WillYouBeMyValentine/${yourName}/${valentineName}`;
-            window.history.pushState({}, '', url);
             document.body.style.backgroundColor = 'hsla(305,100%,78%,0.96)';
+            const yourName = document.getElementById('yourName');
+            const valentineName = document.getElementById('valentineName');
+            const url = `https://alanali.github.io/WillYouBeMyValentine/?name=${yourName}&valentine=${valentineName}`;
+            window.history.pushState({}, '', url);
         }
     });
 });

@@ -15,7 +15,8 @@
     <!-- TODO: REMOVE -->
     <!-- <div class="line"></div> -->
     <div id="content">
-        <h1>Who's your</h1><h1>valentine?</h1><br><br>
+        <!-- <h1 id="question">Who's your</h1> -->
+        <h1 id="name1" class="hidden">A</h1><h1 class="hidden">, will you be </h1><h1 id="name2" class="hidden">B</h1><h1 id="apostrophe" class="hidden">'s </h1><h1>valentine?</h1><br><br>
         <form id="valentineForm" novalidate>
             <div id="input-row">
                 <div class="hearts">
@@ -27,7 +28,8 @@
                         shadow-intensity="0" 
                         shadow-softness="0" 
                         auto-rotate rotation-per-second="300%" 
-                        environment-image="public/clouds.hdr">
+                        environment-image="public/clouds.hdr"
+                        data-js-focus-visible="">
                     </model-viewer>
                     <input type="text" id="yourName" placeholder="Your Name" required autocomplete="off">
                 </div>
@@ -40,7 +42,8 @@
                         shadow-intensity="0" 
                         shadow-softness="0" 
                         auto-rotate rotation-per-second="300%" 
-                        environment-image="public/clouds.hdr">
+                        environment-image="public/clouds.hdr"
+                        data-js-focus-visible="">
                     </model-viewer>
                     <input type="text" id="valentineName" placeholder="Your Valentine" required autocomplete="off">
                 </div>

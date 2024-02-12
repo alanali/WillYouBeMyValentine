@@ -2,6 +2,10 @@
     transition: all 0.3s ease;
 }
 
+*:focus {
+    outline: none;
+}
+
 body.transition {
     transition: background-color 1.5s;
 }
@@ -86,9 +90,14 @@ h1 {
     text-align: center;
     font-size: clamp(48px, 8vw, 150px);
     line-height: 105%;
-    margin: 0px;
-    padding: 0px;
+    margin: 0;
+    padding: 0;
+    display: inline;
 }
+
+/* .hidden {
+    display: none;
+} */
 
 input::placeholder {
     text-align: center;
@@ -146,6 +155,10 @@ model-viewer {
     height: clamp(150px, 24vw, 400px);
 }
 
+model-viewer:focus {
+    outline: none;
+}
+
 input[type="text"] {
     position: absolute;
     width: 80%;
@@ -183,7 +196,7 @@ input[type="text"] {
         rgba(91, 176, 255,.25) 0 4px 8px,
         rgba(91, 176, 255,.25) 0 8px 16px,
         rgba(91, 176, 255,.25) 0 16px 32px;
-    background-color: #c0aeff;
+    background-color: #e5deffde;
     transform: scale(1.05) rotate(-1deg);
 }
 
