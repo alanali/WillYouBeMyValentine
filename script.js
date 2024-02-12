@@ -25,7 +25,16 @@ document.addEventListener('DOMContentLoaded', function() {
             const yourName = document.getElementById('yourName').value;
             const valentineName = document.getElementById('valentineName').value;
             navigator.clipboard.writeText(`https://alanali.github.io/WillYouBeMyValentine/?name=${yourName}&valentine=${valentineName}`)
-            updatePage(yourName, valentineName);
+            // Show copied popup
+            const copiedElement = document.getElementById("copied");
+            copiedElement.style.opacity = "1";
+            setTimeout(function() {
+                copiedElement.style.opacity = "0";
+                setTimeout(function() {
+                    copiedElement.style.display = 'none';
+                }, 500);
+            }, 2000);
+            updatePage(yourName, valentineName)
         }
     });
 });
@@ -46,20 +55,19 @@ function updatePage(name, val) {
     document.querySelectorAll('.options-container').forEach(container => {
         container.style.display = 'flex';
     });
-    document.getElementById("copied").style.opacity = "1";
-    setTimeout(function() {
-        document.getElementById("copied").style.opacity = "0";
-    }, 2000);
-
+    
     document.querySelectorAll('.hearts').forEach(container => {
         container.addEventListener('click', function() {
             alert('Model viewer clicked!');
         });
+        const modelViewer = container.querySelector('model-viewer');
         container.addEventListener('mouseenter', function() {
             container.classList.add('hover-effect');
+            modelViewer.setAttribute('rotation-per-second', '500%');
         });
         container.addEventListener('mouseleave', function() {
             container.classList.remove('hover-effect');
+            modelViewer.setAttribute('rotation-per-second', '300%');
         });
     });
 

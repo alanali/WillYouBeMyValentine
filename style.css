@@ -170,10 +170,6 @@ model-viewer:focus {
     animation: heartbeat 1s infinite;
 }
 
-/* .hover-effect:hover model-viewer {
-    --rotation-per-second: 500%;
-} */
-
 @keyframes heartbeat {
     0% {
         transform: scale(1);
