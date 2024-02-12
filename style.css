@@ -88,16 +88,11 @@ body {
 
 h1 {
     text-align: center;
-    font-size: clamp(48px, 8vw, 150px);
+    font-size: clamp(56px, 9vw, 150px);
     line-height: 105%;
     margin: 0;
     padding: 0;
-    display: inline;
 }
-
-/* .hidden {
-    display: none;
-} */
 
 input::placeholder {
     text-align: center;
@@ -127,10 +122,6 @@ input {
     font-size: clamp(14px, 2vw, 36px);
     font-family: 'Rafaella', sans-serif;
     line-height: 1.1;
-}
-
-textarea:focus, input:focus {
-    outline: none;
 }
 
 #input-row {

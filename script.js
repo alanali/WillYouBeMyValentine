@@ -4,7 +4,7 @@ document.addEventListener('DOMContentLoaded', function() {
     if (urlParams.has('name') && urlParams.has('valentine')) {
         const yourName = urlParams.get('name');
         const valentineName = urlParams.get('valentine');
-        
+        updatePage(yourName, valentineName);
     }
     const vform = document.getElementById('valentineForm');
     document.querySelectorAll('.go-button').forEach(button => {
@@ -22,14 +22,19 @@ document.addEventListener('DOMContentLoaded', function() {
                 }, 1000);
             }, 1000);
         } else {
-            document.body.style.backgroundColor = 'hsla(305,100%,78%,0.96)';
-            const yourName = document.getElementById('yourName');
-            const valentineName = document.getElementById('valentineName');
-            const url = `https://alanali.github.io/WillYouBeMyValentine/?name=${yourName}&valentine=${valentineName}`;
-            window.history.pushState({}, '', url);
+            const yourName = document.getElementById('yourName').value;
+            const valentineName = document.getElementById('valentineName').value;
+            updatePage(yourName, valentineName);
         }
     });
 });
+
+function updatePage(name, val) {
+    document.body.style.backgroundColor = 'hsla(305,100%,78%,0.96)';
+    const url = `https://alanali.github.io/WillYouBeMyValentine/?name=${name}&valentine=${val}`;
+    window.history.pushState({}, '', url);
+    document.getElementById('title').textContent = `Hello, ${name}!`;
+}
 
 function validForm() {
     const yourName = document.getElementById('yourName');
