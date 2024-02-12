@@ -136,18 +136,50 @@ input {
     align-items: center;
     flex-direction: column;
     text-align: center;
-    margin: 0 clamp(10px, 4vw, 400px);
+    margin: 0 clamp(10px, 3vw, 400px);
 
     /* border: 1px solid black; */
 }
 
+.options-container {
+    position: absolute;
+    /* width: 100%;
+    height: 100%; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    display: none;
+}
+
+.option {
+    font-size: clamp(14px, 3vw, 36px);
+    margin: 0;
+    font-family: 'Rafaella', sans-serif;
+}
+
 model-viewer {
-    width: clamp(150px, 24vw, 400px);
-    height: clamp(150px, 24vw, 400px);
+    width: clamp(150px, 25vw, 400px);
+    height: clamp(150px, 25vw, 400px);
 }
 
 model-viewer:focus {
     outline: none;
+}
+
+.hover-effect:hover {
+    animation: heartbeat 1s infinite;
+}
+
+@keyframes heartbeat {
+    0% {
+        transform: scale(1); /* Initial size */
+    }
+    70% {
+        transform: scale(1.1); /* Scale up */
+    }
+    100% {
+        transform: scale(1); /* Return to original size */
+    }
 }
 
 input[type="text"] {

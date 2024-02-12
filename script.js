@@ -31,9 +31,33 @@ document.addEventListener('DOMContentLoaded', function() {
 
 function updatePage(name, val) {
     document.body.style.backgroundColor = 'hsla(305,100%,78%,0.96)';
-    const url = `https://alanali.github.io/WillYouBeMyValentine/?name=${name}&valentine=${val}`;
-    window.history.pushState({}, '', url);
-    document.getElementById('title').textContent = `Hello, ${name}!`;
+    // const url = `https://alanali.github.io/WillYouBeMyValentine/?name=${name}&valentine=${val}`;
+    // window.history.pushState({}, '', url);
+    document.getElementById('title').textContent = `${val}, will you be ${name}'s valentine?`;
+    // Remove elements
+    const inputElements = document.querySelectorAll('.hearts input');
+    inputElements.forEach(input => {
+        input.remove();
+    });
+    const button = document.querySelector('.go-button');
+    button.parentNode.removeChild(button);
+
+    document.querySelectorAll('.options-container').forEach(container => {
+        container.style.display = 'flex';
+    });
+
+    document.querySelectorAll('.hearts').forEach(container => {
+        container.addEventListener('click', function() {
+            alert('Model viewer clicked!');
+        });
+        container.addEventListener('mouseenter', function() {
+            container.classList.add('hover-effect');
+        });
+        container.addEventListener('mouseleave', function() {
+            container.classList.remove('hover-effect');
+        });
+    });
+
 }
 
 function validForm() {
