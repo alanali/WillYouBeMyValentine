@@ -179,12 +179,14 @@ input {
     justify-content: center;
     align-items: center;
     display: none;
+    width: 80%;
 }
 
 .option {
     font-size: clamp(14px, 3vw, 36px);
     margin: 0;
     font-family: 'Rafaella', sans-serif;
+    line-height: 1.05;
 }
 
 model-viewer {

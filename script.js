@@ -58,13 +58,20 @@ function updatePage(name, val) {
     });
     
     // Heart hover and click effects
+    const noisyes = ['Are you sure?', 'Reconsider?', 'Pretty please?', 'Click yes if no', 'Last chance!', 'Don\'t make me do this...', 'Yes'];
+    let listInd = 0;
     document.querySelectorAll('.hearts').forEach(container => {
         container.addEventListener('click', function() {
             const heartId = container.id;
             if (heartId === 'heart1') {
                 yes();
             } else {
-                no();
+                const no = document.getElementById('no');
+                if (listInd === noisyes.length - 1) {
+                    yes();
+                }
+                listInd = (listInd + 1) % noisyes.length;
+                no.textContent = noisyes[listInd];
             }
         });
         const modelViewer = container.querySelector('model-viewer');
