@@ -97,7 +97,7 @@ function yes() {
 
 function createConfetti() {
     const confettiContainer = document.querySelector("#confetti-container");
-    const particles = ['❤️','🩷','🧡','🩵','💜','❤️‍🔥','💖','💝','💞','💕','💗','💓','💘', '🎉','💐','🌹','🌷','💌','😍','🥰'];
+    const particles = ['❤️','🩷','🧡','🩵','💜','❤️‍🔥','💖','💝','💞','💕','💗','💓','💘', '🎉', '🥳','💐','🌹','🌷','💌','😍','🥰'];
     const confetti = document.createElement("div");
     const randomParticle = particles[Math.floor(Math.random() * particles.length)];
     const startRotation = (Math.random() * 2 - 1) * 360; // Random start rotation
