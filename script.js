@@ -41,9 +41,10 @@ document.addEventListener('DOMContentLoaded', function() {
 
 function updatePage(name, val) {
     document.body.style.backgroundColor = 'hsla(305,100%,78%,0.96)';
-    const url = `https://alanali.github.io/WillYouBeMyValentine/?name=${name}&valentine=${val}`;
-    window.history.pushState({}, '', url);
+    // const url = `https://alanali.github.io/WillYouBeMyValentine/?name=${name}&valentine=${val}`;
+    // window.history.pushState({}, '', url);
     document.getElementById('title').textContent = `${val}, will you be ${name}'s valentine?`;
+
     // Remove elements
     const inputElements = document.querySelectorAll('.hearts input');
     inputElements.forEach(input => {
@@ -56,6 +57,7 @@ function updatePage(name, val) {
         container.style.display = 'flex';
     });
     
+    // Heart hover and click effects
     document.querySelectorAll('.hearts').forEach(container => {
         container.addEventListener('click', function() {
             const heartId = container.id;
@@ -78,7 +80,37 @@ function updatePage(name, val) {
 }
 
 function yes() {
-    alert('They said yes!');
+    document.getElementById('title').textContent = `They said yes!`;
+    setInterval(() => {
+        createConfetti();
+    }, 150);
+    const valentineForm = document.getElementById('valentineForm');
+    valentineForm.remove();
+}
+
+function createConfetti() {
+    const confettiContainer = document.querySelector("#confetti-container");
+    const particles = ['❤️','🩷','🧡','🩵','💜','❤️‍🔥','💖','💝','💞','💕','💗','💓','💘', '🎉','💐','🌹','🌷','💌','😍','🥰'];
+    const confetti = document.createElement("div");
+    const randomParticle = particles[Math.floor(Math.random() * particles.length)];
+    const startRotation = (Math.random() * 2 - 1) * 360; // Random start rotation
+    const endRotation = (Math.random() * 2 - 1) * 360; // Random end rotation
+    const animationDuration = (window.innerHeight / 1000) + Math.random() * 2;
+    
+    confetti.textContent = randomParticle;
+    confetti.classList.add("confetti");
+    confetti.style.left = Math.random() * (innerWidth - 40) + "px";
+    confetti.style.transform = `rotate(${startRotation}deg)`;
+    
+    confetti.style.setProperty('--start-rotation', `${startRotation}deg`);
+    confetti.style.setProperty('--end-rotation', `${endRotation}deg`);
+    confetti.style.animationDuration = `${animationDuration}s`;
+    
+    confettiContainer.appendChild(confetti);
+
+    setTimeout(() => {
+        confetti.remove();
+    }, 10000);
 }
 
 function no() {

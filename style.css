@@ -42,6 +42,36 @@ html, body {
     src: url('fonts/Rafaella\ Shade\ Solo.ttf') format('truetype');
 }
 
+#confetti-container {
+    position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	height: 100vh;
+    overflow: hidden;
+}
+
+.confetti {
+	position: absolute;
+	font-size: 1.6rem;
+	animation: confetti-fall linear 5s infinite;
+    margin: 0;
+	padding: 0;
+	box-sizing: content-box;
+    top: 0;
+}
+
+@keyframes confetti-fall {
+    0% {
+        transform: translateY(-100%) rotate(var(--start-rotation));
+    }
+    100% {
+        transform: translateY(100vh) rotate(var(--end-rotation));
+    }
+}
 
 /* Background gradient, font color */
 body {
@@ -89,7 +119,7 @@ body {
 
 h1 {
     text-align: center;
-    font-size: clamp(56px, 9vw, 150px);
+    font-size: clamp(56px, 10vw, 200px);
     line-height: 105%;
     margin: 0;
     padding: 0;
