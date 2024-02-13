@@ -41,8 +41,8 @@ document.addEventListener('DOMContentLoaded', function() {
 
 function updatePage(name, val) {
     document.body.style.backgroundColor = 'hsla(305,100%,78%,0.96)';
-    // const url = `https://alanali.github.io/WillYouBeMyValentine/?name=${name}&valentine=${val}`;
-    // window.history.pushState({}, '', url);
+    const url = `https://alanali.github.io/WillYouBeMyValentine/?name=${name}&valentine=${val}`;
+    window.history.pushState({}, '', url);
     document.getElementById('title').textContent = `${val}, will you be ${name}'s valentine?`;
 
     // Remove elements
