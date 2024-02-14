@@ -1,6 +1,17 @@
 document.addEventListener('DOMContentLoaded', function() {
+    // Check if model viewers are loaded
+    const modelViewers = document.querySelectorAll('model-viewer');
+    let loadedCount = 0;
+    modelViewers.forEach(modelViewer => {
+        modelViewer.addEventListener('load', () => {
+            loadedCount++;
+            if (loadedCount === modelViewers.length) {
+                hideLoader();
+            }
+        });
+    });
+    // Check for url arguments
     const urlParams = new URLSearchParams(window.location.search);
-    
     if (urlParams.has('name') && urlParams.has('valentine')) {
         const yourName = urlParams.get('name');
         const valentineName = urlParams.get('valentine');
