@@ -6,7 +6,9 @@ document.addEventListener('DOMContentLoaded', function() {
         modelViewer.addEventListener('load', () => {
             loadedCount++;
             if (loadedCount === modelViewers.length) {
-                document.getElementById("loader").style.display = "none";
+                setTimeout(() => {
+                  document.getElementById("loader").style.display = "none";
+                }, 1000);
             }
         });
     });

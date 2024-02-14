@@ -121,13 +121,66 @@ body {
     z-index: 9999;
 }
   
-.spinner {
-    border: 4px solid rgba(255, 255, 255, 0.3);
+.heartbeat {
+    margin: 40px 0 0 60px;
+    /*background: #fcfcfc;*/
+    margin: auto;
+    margin-top: 100px;
+    border-radius: 10px;
+    height: 75px;
+    width: 75px;
+    margin-bottom: 10px;
+    float: center;
+    animation-delay: 0.9s;
+    animation-duration: 0.8s;
+    animation-name: pump;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+    animation-timing-function: cubic-bezier(.26,-0.53,.57,2.32);
+}
+
+.heartbeat:before {
+    content: "";
+    position: absolute;
+    background: white;
+    height: 40px;
+    width: 40px;
+    z-index: 0;
+    margin-top: 15px;
+    margin-left: 15px;
+    transform: rotate(45deg);
+}
+
+.heartbeat .circle1 {
+    content: "";
+    position: absolute;
+    background: white;
+    height: 40px;
+    width: 40px;
+    z-index: 1;
     border-radius: 50%;
-    border-top: 4px solid #fff;
-    width: 50px;
-    height: 50px;
-    animation: spin 1s linear infinite;
+    /*animation-direction: alternate;*/
+}
+
+.heartbeat .circle2 {
+    content: "";
+    position: absolute;
+    background: white;
+    height: 40px;
+    width: 40px;
+    z-index: 1;
+    margin-left: 30px;
+    border-radius: 50%;
+    /*animation-direction: alternate;*/
+}
+
+@keyframes pump {
+    0%{
+        transform: scale(1);
+    }
+    100%{
+        transform: scale(1.1);
+    }
 }
 
 .btn-95,
@@ -214,7 +267,7 @@ h1 {
     line-height: 105%;
     margin: 0;
     padding: 0;
-    max-width: 80%;
+    max-width: 75%;
 }
 
 input::placeholder {
