@@ -336,6 +336,7 @@ input {
 model-viewer {
     width: clamp(150px, 25vw, 400px);
     height: clamp(150px, 25vw, 400px);
+    --progress-bar-color: transparent;
 }
 
 model-viewer:focus {
