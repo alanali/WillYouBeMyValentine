@@ -6,7 +6,7 @@ document.addEventListener('DOMContentLoaded', function() {
         modelViewer.addEventListener('load', () => {
             loadedCount++;
             if (loadedCount === modelViewers.length) {
-                hideLoader();
+                document.getElementById("loader").style.display = "none";
             }
         });
     });
@@ -21,6 +21,7 @@ document.addEventListener('DOMContentLoaded', function() {
     document.querySelectorAll('.go-button').forEach(button => {
         button.addEventListener('click', pop);
     });
+    // Form validation
     vform.addEventListener('submit', function(event) {
         event.preventDefault();
         if (!validForm()) {
@@ -55,7 +56,6 @@ function updatePage(name, val) {
     const url = `https://alanali.github.io/WillYouBeMyValentine/?name=${name}&valentine=${val}`;
     window.history.pushState({}, '', url);
     document.getElementById('title').textContent = `${val}, will you be ${name}'s valentine?`;
-
     // Remove elements
     const inputElements = document.querySelectorAll('.hearts input');
     inputElements.forEach(input => {
@@ -67,7 +67,6 @@ function updatePage(name, val) {
     document.querySelectorAll('.options-container').forEach(container => {
         container.style.display = 'flex';
     });
-    
     // Heart hover and click effects
     const noisyes = ['Are you sure?', 'Reconsider?', 'Pretty please?', 'Click yes if no', 'Last chance!', 'Don\'t make me do this...', 'Yes'];
     let listInd = 0;
@@ -129,10 +128,6 @@ function createConfetti() {
     setTimeout(() => {
         confetti.remove();
     }, 10000);
-}
-
-function no() {
-    alert('They said no :(');
 }
 
 function validForm() {
