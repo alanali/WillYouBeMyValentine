@@ -24,7 +24,6 @@ html, body {
 @font-face {
     font-family: 'Rafaella Bold';
     src: url('fonts/Rafaella\ Bold.ttf') format('truetype');
-    font-weight: bold;
 }
 
 @font-face {
