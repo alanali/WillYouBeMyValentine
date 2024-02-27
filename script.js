@@ -90,10 +90,12 @@ function updatePage(name, val) {
         container.addEventListener('mouseenter', function() {
             container.classList.add('hover-effect');
             modelViewer.setAttribute('rotation-per-second', '700%');
+            container.style.cursor = 'pointer';
         });
         container.addEventListener('mouseleave', function() {
             container.classList.remove('hover-effect');
             modelViewer.setAttribute('rotation-per-second', '300%');
+            container.style.cursor = '';
         });
     });
 }
