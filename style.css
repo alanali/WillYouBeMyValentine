@@ -180,28 +180,28 @@ body {
     }
 }
 
-.btn-95,
-.btn-95 *,
-.btn-95 :after,
-.btn-95 :before,
-.btn-95:after,
-.btn-95:before {
+.github-button,
+.github-button *,
+.github-button :after,
+.github-button :before,
+.github-button:after,
+.github-button:before {
   border: 0 solid;
   box-sizing: border-box;
 }
-.btn-95:disabled {
+.github-button:disabled {
   cursor: default;
 }
-.btn-95:-moz-focusring {
+.github-button:-moz-focusring {
   outline: auto;
 }
-.btn-95 svg {
+.github-button svg {
   vertical-align: middle;
 }
-.btn-95 [hidden] {
+.github-button [hidden] {
   display: none;
 }
-.btn-95 {
+.github-button {
     background: hsla(0, 0%, 100%, 0.2);
     background-clip: content-box;
     border-radius: 50%;
@@ -210,17 +210,18 @@ body {
     height: 100px;
     -webkit-mask-image: none;
     padding: 0;
-    position: absolute; /* Set the position to absolute */
-    top: 0; /* Position at the top */
-    left: 0; /* Position at the left */
+    position: absolute;
+    top: 0;
+    left: 0;
     transition: 0.2s;
     width: 100px;
     transform: scale(0.6);
+    cursor: pointer;
   }
-.btn-95:hover {
+.github-button:hover {
   background: #fff;
 }
-.btn-95 svg {
+.github-button svg {
   --size: 70px;
   fill: #ffffffce;
   display: block;
@@ -230,10 +231,10 @@ body {
   top: calc(50% - var(--size) / 2);
   width: var(--size);
 }
-.btn-95:hover svg {
+.github-button:hover svg {
   fill: #6797ff49;
 }
-.btn-95:before {
+.github-button:before {
   border: 5px solid #fff;
   border-radius: 50%;
   content: "";
@@ -244,12 +245,11 @@ body {
   transform: scale(2);
   transition: 0.2s;
 }
-.btn-95:hover:before {
+.github-button:hover:before {
   opacity: 1;
   transform: scale(1);
 }
 
-/* Align everything in the center */
 #content {
     display: flex;
     justify-content: center;
